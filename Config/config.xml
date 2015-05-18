@@ -4,7 +4,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://thelia.net/schema/dic/config http://thelia.net/schema/dic/config/thelia-1.0.xsd">
     <hooks>
-        <hook id="index_engine.hook.front" class="ProductSearch\Hook\FrontHook" scope="request">
+        <hook id="product_search.hook.front" class="ProductSearch\Hook\FrontHook" scope="request">
             <tag name="hook.event_listener" event="main.head-bottom" />
             <tag name="hook.event_listener" event="main.navbar-secondary" />
             <tag name="hook.event_listener" event="main.body-bottom" />
