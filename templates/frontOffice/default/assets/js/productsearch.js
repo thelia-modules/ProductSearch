@@ -21,7 +21,9 @@
       inputSubmitSearch: 'search-query',
       searchBlock: 'search-block',
       pageWrapper: 'page',
-      apiUrl: '/api/public/search'
+      apiUrl: '/api/public/search',
+      indexCode: '',
+      params: {}
     }
 
     // Create options by extending defaults with the passed in arguments
@@ -103,9 +105,13 @@
   }
 
   ProductSearch.prototype.fetchResult = function(search){
+    for(var key in this.options.params) {
+        this.options.params[key][1] = this.options.params[key][1].replace('search', search);
+    }    
+
     var results =  this.se.find(
-      "products", // Then index configuration code
-      { "title_fr_FR": ["LIKE", search]},
+      this.options.indexCode.toString(), // Then index configuration code
+      this.options.params,
       {
           // Here you can play with the client's behaviour
           // You can define the results limit and offset ( for pagination )

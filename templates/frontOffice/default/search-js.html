@@ -47,7 +47,9 @@ $(function(){
   var MyProductSearch = new ProductSearch({
     locale: 'fr_FR',
     searchButton: 'launch-search',
-    templateItem: $('#item-template').html()
+    templateItem: $('#item-template').html(),
+    indexCode: 'products', // mandatory
+    params: { "title_fr_FR": ["LIKE", 'search'], "description_fr_FR":["LIKE", 'search']}
   });
   MyProductSearch.init();
 })
