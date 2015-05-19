@@ -107,7 +107,9 @@
   ProductSearch.prototype.fetchResult = function(search){
     var cachedParams = this.options.params;
     for(var key in cachedParams ) {
+      if(cachedParams[key][1]){
         cachedParams[key][1] = cachedParams[key][1].replace('', search);
+      }
     }    
 
     var results =  this.se.find(
