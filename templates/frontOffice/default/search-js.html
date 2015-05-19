@@ -32,7 +32,7 @@
         <div>
             <div class="product-btn">
                 <a class="btn btn-primary btn-block" href="{{url}}">
-                    <i class="fa fa-eye"></i>{intl l="View Product"}
+                    <i class="fa fa-eye"></i>{/literal}{intl l="View Product"}{literal}
                 </a>
             </div>
         </div>
@@ -49,6 +49,6 @@ $(function(){
     searchButton: 'launch-search',
     templateItem: $('#item-template').html()
   });
-  MyProductSearch.init() 
+  MyProductSearch.init();
 })
 </script> 

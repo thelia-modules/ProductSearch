@@ -159,7 +159,7 @@
   function populateItem(item, currencySymbol){
     item.template = item.template.replace('{{name}}', item.name);
     item.template = item.template.replace(/{{url}}/g, item.url);
-    item.template = item.template.replace('{{price}}', item.price + currencySymbol);
+    item.template = item.template.replace('{{price}}', item.price +' '+currencySymbol);
     item.template = item.template.replace('{{image}}', item.image);
 
     return item;
