@@ -105,13 +105,14 @@
   }
 
   ProductSearch.prototype.fetchResult = function(search){
-    var cachedParams = this.options.params;
+    cachedParams = this.options.params;
     for(var key in cachedParams ) {
-      if(cachedParams[key][1]){
-        cachedParams[key][1] = cachedParams[key][1].replace('', search);
+      if(typeof cachedParams[key][1] == "string"){
+        cachedParams[key][1] = search;
       }
     }    
-
+    console.log(search)
+    console.log(cachedParams);
     var results =  this.se.find(
       this.options.indexCode.toString(), // Then index configuration code
       cachedParams,

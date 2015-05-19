@@ -45,10 +45,11 @@
 <script type="text/javascript">
 $(function(){
   var MyProductSearch = new ProductSearch({
+    indexCode: 'products', // mandatory
     locale: 'fr_FR',
     searchButton: 'launch-search',
     templateItem: $('#item-template').html(),
-    indexCode: 'products', // mandatory
+    noResultTemplate: '<li class="col-sm-12">{intl l="Sorry, no result for your search"}</li>',
     params: { "title_fr_FR": ["LIKE", ''], "description_fr_FR":["LIKE", '']}
   });
   MyProductSearch.init();
