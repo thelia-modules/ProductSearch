@@ -105,13 +105,14 @@
   }
 
   ProductSearch.prototype.fetchResult = function(search){
-    for(var key in this.options.params) {
-        this.options.params[key][1] = this.options.params[key][1].replace('search', search);
+    var cachedParams = this.options.params;
+    for(var key in cachedParams ) {
+        cachedParams[key][1] = cachedParams[key][1].replace('', search);
     }    
 
     var results =  this.se.find(
       this.options.indexCode.toString(), // Then index configuration code
-      this.options.params,
+      cachedParams,
       {
           // Here you can play with the client's behaviour
           // You can define the results limit and offset ( for pagination )
