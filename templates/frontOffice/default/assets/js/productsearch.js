@@ -154,21 +154,18 @@
   // Private Methods
 
   function createItem(item, locale, currency, templateItem){
-    this.id = item.id;
-    this.name = item["title_"+locale];
-    this.description = item["description_"+locale];
-    this.url = item["url_"+locale];
-    this.price = item["price_"+currency];
-    this.promoPrice = '';
-    this.image = item.image_url;
+    for(var nameProp in item){
+      if (item.hasOwnProperty(nameProp) && item[nameProp] !== '') {
+        this[nameProp] = item[nameProp]
+      }
+    }
     this.template = templateItem;
   }    
 
   function populateItem(item, currencySymbol){
       for(var nameProp in item) {
-        
         var value = item[nameProp];
-        var reg = new RegExp('{{'+nameProp+'}}',"g");
+        var reg = new RegExp('##'+nameProp+'##',"g");
 
         if(nameProp !== 'template'){
           item.template = item.template.replace(reg, item[nameProp]);
