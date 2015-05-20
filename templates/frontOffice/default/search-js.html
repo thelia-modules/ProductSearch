@@ -9,34 +9,20 @@
 {literal}
 <script id="item-template" type="text/template">
 <li class="item col-md-3 col-lg-2">
-    <article class="row">
-    <a class="product-image col-sm-3" tabindex="-1" href="{{url}}">
-        <img class="img-responsive" src="{{image}}" itemprop="image">
-    </a>
-    <div class="product-info col-sm-6">
-        <h2 class="name">
-        <a href="#">
-            <span class="name">{{name}}</span>
+    <article itemtype="http://schema.org/Product" itemscope="">
+
+        <a class="product-image overlay" tabindex="-1" itemprop="url" href="{{url}}">
+            <img alt="{{name}}" src="{{image}}" class="img-responsive center-block" itemprop="image">
         </a>
-        </h2>
-        <div itemprop="description" class="description">
-            <p>{{description}}</p>
-        </div>
-    </div>
-    <div class="product-price col-sm-3">
-        <div class="price-container row">
-        <span class="regular-price col-xs-12">
-            <span class="price" itemprop="price">{{price}}</span>
-        </span>
-        </div>
-        <div>
-            <div class="product-btn">
-                <a class="btn btn-primary btn-block" href="{{url}}">
-                    <i class="fa fa-eye"></i>{/literal}{intl l="View Product"}{literal}
-                </a>
+        <a class="product-info" href="{url">
+            <h3 class="name"><span itemprop="name">{{name}}</span></h3>
+            <div itemprop="description" class="short-description">{{description}}</div>
+            <div class="product-price">
+                <div itemtype="http://schema.org/Offer" itemscope="" itemprop="offers" class="price-container">
+                    <span class="regular-price"><span class="price" itemprop="price">{{price}}</span></span>
+                </div>
             </div>
-        </div>
-    </div>
+        </a>
     </article>
 </li>
 </script>
@@ -50,7 +36,7 @@ $(function(){
     searchButton: 'launch-search',
     templateItem: $('#item-template').html(),
     noResultTemplate: '<li class="col-sm-12">{intl l="Sorry, no result for your search"}</li>',
-    params: { "title_fr_FR": ["LIKE", ''], "description_fr_FR":["LIKE", '']}
+    params: { "description_fr_FR":["LIKE", '']}
   });
   MyProductSearch.init();
 })

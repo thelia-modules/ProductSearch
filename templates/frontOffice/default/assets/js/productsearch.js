@@ -111,8 +111,6 @@
         cachedParams[key][1] = search;
       }
     }    
-    console.log(search)
-    console.log(cachedParams);
     var results =  this.se.find(
       this.options.indexCode.toString(), // Then index configuration code
       cachedParams,
@@ -167,11 +165,22 @@
   }    
 
   function populateItem(item, currencySymbol){
-    item.template = item.template.replace('{{name}}', item.name);
+      for(var nameProp in item) {
+        
+        var value = item[nameProp];
+        var reg = new RegExp('{{'+nameProp+'}}',"g");
+
+        if(nameProp !== 'template'){
+          item.template = item.template.replace(reg, item[nameProp]);
+        }
+      }
+
+    /*
     item.template = item.template.replace(/{{url}}/g, item.url);
     item.template = item.template.replace('{{price}}', item.price +' '+currencySymbol);
     item.template = item.template.replace('{{image}}', item.image);
-
+    item.template = item.template.replace('{{description}}', item.description);
+    */
     return item;
   }
 
