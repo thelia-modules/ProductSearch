@@ -113,7 +113,7 @@
     }    
     var results =  this.se.find(
       this.options.indexCode.toString(), // Then index configuration code
-      cachedParams,
+        {"or":cachedParams},
       {
           // Here you can play with the client's behaviour
           // You can define the results limit and offset ( for pagination )

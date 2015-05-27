@@ -42,7 +42,11 @@ $(function(){
     searchButton: 'launch-search',
     templateItem: $('#item-template').html(),
     noResultTemplate: '<li class="col-sm-12">{intl l="Sorry, no result for your search"}</li>',
-    params: { "description_fr_FR":["LIKE", '']}
+    params: {
+        "description_fr_FR": ["LIKE", ''],
+        "title_fr_FR": ["LIKE", ''],
+        "ref":["LIKE", '']
+    }
   });
   MyProductSearch.init();
 })
