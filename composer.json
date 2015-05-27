@@ -1,0 +1,12 @@
+{
+  "name": "thelia/product-search-module",
+  "license": "LGPL-3.0+",
+  "type": "thelia-module",
+  "require": {
+    "thelia/installer": "~1.1",
+    "thelia/index-engine-module": "~2.3"
+  },
+  "extra": {
+    "installer-name": "ProductSearch"
+  }
+}

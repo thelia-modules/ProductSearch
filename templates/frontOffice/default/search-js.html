@@ -9,9 +9,6 @@
 {assign 'locale' value="{lang attr="locale"}"}
 {assign 'currency' value="{currency attr="code"}"}
 
-
-<h1>url_en_US - url_{$locale}</h1>
-
 <script id="item-template" type="text/template">
 <li class="item col-md-3 col-lg-2">
     <article itemtype="http://schema.org/Product" itemscope="">
@@ -39,13 +36,12 @@ $(function(){
     indexCode: 'products', // mandatory
     locale: '{$locale}',
     currency: '{$currency}',
-    searchButton: 'launch-search',
     templateItem: $('#item-template').html(),
     noResultTemplate: '<li class="col-sm-12">{intl l="Sorry, no result for your search"}</li>',
     params: {
         "description_{$locale}": ["LIKE", ''],
         "title_{$locale}": ["LIKE", ''],
-        "ref":["LIKE", '']
+
     }
   });
   MyProductSearch.init();

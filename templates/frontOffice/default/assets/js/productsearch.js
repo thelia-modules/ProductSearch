@@ -9,20 +9,20 @@
 
     // Define option defaults 
     var defaults = {
-      locale: 'en_EN',
+      locale: 'en_US',
       currency: 'USD',
       currencySymbol: '$',
       templateItem: $('#item-template').html(),
       noResultTemplate: '<li class="col-sm-12">Sorry, no result for your search</li>',
       listResult: document.getElementById('list-result'),
-      searchButton: 'search-button',
+      searchButton: 'launch-search',
       closeButton: 'close-search',
       submitSearch: 'search-query-form',
       inputSubmitSearch: 'search-query',
       searchBlock: 'search-block',
       pageWrapper: 'page',
       apiUrl: '/api/public/search',
-      indexCode: '',
+      indexCode: 'products',
       params: {}
     }
 
@@ -43,7 +43,8 @@
     var closeSearch = document.getElementById(self.options.closeButton);
     var submitSearch = document.getElementById(self.options.submitSearch);
 
-    launchSearch.addEventListener('click', function() {
+    launchSearch.addEventListener('click', function(e) {
+      e.preventDefault();
       self.open();
     });   
     closeSearch.addEventListener('click', function() {
@@ -172,12 +173,6 @@
         }
       }
 
-    /*
-    item.template = item.template.replace(/{{url}}/g, item.url);
-    item.template = item.template.replace('{{price}}', item.price +' '+currencySymbol);
-    item.template = item.template.replace('{{image}}', item.image);
-    item.template = item.template.replace('{{description}}', item.description);
-    */
     return item;
   }
 
