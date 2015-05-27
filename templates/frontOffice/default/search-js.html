@@ -43,8 +43,8 @@ $(function(){
     templateItem: $('#item-template').html(),
     noResultTemplate: '<li class="col-sm-12">{intl l="Sorry, no result for your search"}</li>',
     params: {
-        "description_fr_FR": ["LIKE", ''],
-        "title_fr_FR": ["LIKE", ''],
+        "description_{$locale}": ["LIKE", ''],
+        "title_{$locale}": ["LIKE", ''],
         "ref":["LIKE", '']
     }
   });
