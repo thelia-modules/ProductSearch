@@ -4,11 +4,19 @@ IndexEngine module for Thelia
 Summary
 ---
 
-1. [Install](#install_en_US)
-2. [Usage](#usage_en_US)
+1. [Description](#description_en_US)
+2. [Install](#install_en_US)
+3. [Usage](#usage_en_US)
 
 
-1. Install <a name="install_en_US"></a>
+1. Description <a name="#description_en_US"></a>
+---
+
+This module provides a search pop-in for the front office based on [IndexEngine](https://github.com/thelia-modules/IndexEngine) module.
+
+This is an integration example of the "products" index, provided by default with IndexEngine module.
+
+2. Install <a name="install_en_US"></a>
 ---
 
 You can install this module with composer:
@@ -19,7 +27,7 @@ $ php composer.phar require thelia/product-search-module:~1.0
 
 This module requires [IndexEngine](https://github.com/thelia-modules/IndexEngine) module to work.
 
-2. Usage <a name="usage_en_US"></a>
+3. Usage <a name="usage_en_US"></a>
 ---
 
 Go to your backOffice and activate the module. A search button should have appeared in your front navbar.
