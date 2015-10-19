@@ -4,7 +4,7 @@
   "type": "thelia-module",
   "require": {
     "thelia/installer": "~1.1",
-    "thelia/index-engine-module": "~2.3"
+    "thelia/index-engine-module": "~1.0"
   },
   "extra": {
     "installer-name": "ProductSearch"
